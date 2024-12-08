@@ -61,7 +61,7 @@ const  HomePage = () => {
                 <div className="py-6 relative text-xl font-mono text-black overflow-hidden whitespace-nowrap bg-gray-100 flex justify-center items-center">
                     <div className={` ${showJobs != "" ? "animate-typing":""} overflow-hidden`} >
                     <span className="text-lg text-center block overflow-x-hidden border-r-2 border-black font-bold text-gray-800 tracking-wide animate-blink">
-   {showJobs == "first" ? "BLOGGER":""} {showJobs == "second" ? "Youtube":""} {showJobs == "third" ? "Content Creator":""} <span className={`${showJobs != "" ? "":"hidden"}`} > &bull; </span> 
+   {showJobs == "first" ? "BLOGGER":""} {showJobs == "second" ? "Youtuber":""} {showJobs == "third" ? "Content Creator":""} <span className={`${showJobs != "" ? "":"hidden"}`} > &bull; </span> 
   </span>
                     </div>
  
@@ -84,14 +84,14 @@ const  HomePage = () => {
                </div>
                <div className='w-1/2 bg-white flex justify-start items-center' >
                   <div className='w-2/3 bg-gray-400 animate-slideDown bg-opacity-20 h-72 flex items-center justify-center rounded-full' >
-                        <img src="/Ziizi_App/ziizii2.jpg" onLoad={firstImageLoad} className='w-72 h-72 object-cover rounded-full' alt="" />
+                        <img src="/ziizii2.jpg" onLoad={firstImageLoad} className='w-72 h-72 object-cover rounded-full' alt="" />
                   </div>
                </div>
             </div>
             <div className='w-full bg-red-300 flex flex-row justify-start gap-x-2' style={{marginLeft:"220px"}} >
                <div className='w-1/2 bg-gray-700 flex justify-center' >
                    <div className='w-72 animate-slideRight h-full flex justify-center  bg-gray-200 rounded-full' >
-                     <img src="/Ziizi_App/ziizi.jpg" onLoad={secondImageLoad} className='rounded-full w-64 h-full' alt="" />
+                     <img src="/ziizi.jpg" onLoad={secondImageLoad} className='rounded-full w-64 h-full' alt="" />
                    </div>
                </div>
                <div className='bg-white pr-32 overflow-hidden w-1/2 pl- flex justify-start items-center ' >
