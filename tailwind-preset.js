@@ -90,6 +90,11 @@ module.exports={
               '50%': { color: 'red' },       // Midway color (red)
               '100%': { color: 'black' },    // Ending color (black)
             },
+            colorChangeGray: {
+              '0%': { color: 'rgb(156 163 175)' },      // Starting color (black)
+              '50%': { color: 'rgb(107 114 128)' },       // Midway color (red)
+              '100%': { color: 'rgb(75 85 99)' },    // Ending color (black)
+            },
             colorChange2: {
               '0%': { color: 'gray' },      // Starting color (black)
               '50%': { color: 'white' },       // Midway color (red)
@@ -145,10 +150,21 @@ module.exports={
               '100%': {
                  backgroundColor: '#86d5fa'
               }
-            }
+            },
+            typing: {
+              '0%': { width: '0%' },
+              '50%': { width: '30%' },
+              '100%': { width: '0%' },
+            },
+            blink: {
+              '0%, 100%': { borderColor: 'transparent' },
+              '50%': { borderColor: 'black' },
+            },
            
           },
           animation: {
+            typing: 'typing 3s steps(30, end) infinite',// typing effect
+            blink: 'blink 0.5s step-end infinite',
             fadeIn: 'fadeIn 1s ease-in-out ',
             fadeInSlow:"fadeIn 4s ease-in-out",
             fadeOut:'fadeOut 1s ease-in-out',
@@ -160,6 +176,7 @@ module.exports={
             slideLeft:"slideLeft 2s ease-in forwards",
             colorChange:"colorChange 20s ease-in infinite",
             colorChange2:"colorChange2 20s ease-in infinite",
+            colorChangeGray:"colorChangeGray 10s ease-in-out infinite",
             shakeSlow:"shakeSlow 2s ease-in forwards",
             shakeSlowUp:"shakeSlowUp 2s ease-in forwards",
             revolveDisappear:"revolveDisappear 2s ease-in forwards",

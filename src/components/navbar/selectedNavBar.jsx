@@ -12,7 +12,7 @@ const  SelectedNavBar = ({selected,selectedNames}) => {
 
     useEffect(()=>{
         if(selected == "avatar"){
-            const imagePath2='/sabk.jpeg';
+            const imagePath2='/ziizi.jpg';
             setImagePath(imagePath2);
         }
     },[selected]);

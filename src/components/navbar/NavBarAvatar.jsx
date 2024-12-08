@@ -114,19 +114,16 @@ function ProfileMenu({imagePath}) {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "@material-tailwind/html",
-    description:
-      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+    title: "Learn With Ziizi",
+    description: "Explore insightful tutorials, courses, and resources to expand your knowledge and skills across various topics.",
   },
   {
-    title: "@material-tailwind/react",
-    description:
-      "Learn how to use @material-tailwind/react, packed with rich components for React.",
+    title: "Connect With World",
+    description: "Dive into opportunities to network, share ideas, and engage with a global community of like-minded individuals.",
   },
   {
-    title: "Material Tailwind PRO",
-    description:
-      "A complete set of UI Elements for building faster websites in less time.",
+    title: "Hear Stories",
+    description: "Discover inspiring stories, experiences, and journeys that will motivate and connect you with diverse perspectives.",
   },
 ];
  
@@ -199,15 +196,15 @@ function NavListMenu({imagePath}) {
 // nav list component
 const navListItems = [
   {
-    label: "Account",
+    label: "Story",
     icon: UserCircleIcon,
   },
   {
-    label: "Blocks",
+    label: "News",
     icon: CubeTransparentIcon,
   },
   {
-    label: "Docs",
+    label: "Vlogs",
     icon: CodeBracketSquareIcon,
   },
 ];
@@ -253,9 +250,10 @@ export default function ComplexNavbar({imagePath}) {
         <Typography
           as="a"
           href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium !w-1/3"
+          className="mr-4 ml-2 sm:ml-20 cursor-pointer py-1.5 font-medium !w-1/3"
         >
-          Material Tailwind
+          <span className="sm:text-2xl font-bold text-indigo-600 animate-colorChange font-poppins" >Ziizii Vlog</span>
+          
         </Typography>
         <div className="hidden lg:block">
           <NavList imagePath={imagePath} />

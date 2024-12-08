@@ -1,4 +1,5 @@
 import React from "react";
+import { useState,useEffect } from "react";
 import {
   Navbar,
   MobileNav,
@@ -7,7 +8,7 @@ import {
   IconButton,
   Card,
 } from "@material-tailwind/react";
-import { useState,useEffect } from "react";
+
  
 export default function StickyNavbar({selectedNames}) {
   const [openNav, setOpenNav] = useState(false);
