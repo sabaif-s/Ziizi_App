@@ -4,6 +4,9 @@ import { use } from 'react';
 const  HomePage = () => {
     const [showJobs,setShowJobs]=useState("first");
     const [reRun,setReRun]=useState(0);
+    const [firstImageLoaded,setFirstImageLoaded]=useState(false);
+    const [secondImageLoaded,setSecondImageLoaded]=useState(false);
+    const [imageLoaded,setImageLoaded]=useState(false);
     useEffect(() => {
         if (showJobs === "first" || reRun > 0) {
           const states = ["first", "second", "third"]; // Define the sequence of states
@@ -23,11 +26,21 @@ const  HomePage = () => {
         }
       }, [reRun]); // Only re-run when `reRun` changes
     
-    
+    useEffect(()=>{
+       if(firstImageLoad && secondImageLoad){
+        setImageLoaded(true);
+       }
+    },[firstImageLoaded,secondImageLoaded]);
+    const firstImageLoad=()=>{
+        setFirstImageLoaded(true);
+    }
+    const secondImageLoad=()=>{
+        setSecondImageLoaded(true);
+    }
      
     return (
-        <div className='w-full overflow-x-hidden bg-white relative mt-16 flex flex-col justify-between items-center' style={{height:'calc(100vh - 160px)'}} >
-            <div className='w-full h-full bg-red-300 flex flex-row justify-start gap-x-2' style={{marginLeft:"220px"}} >
+        <div className={` ${imageLoaded ? "":"hidden"} w-full overflow-x-hidden bg-white relative mt-16 flex flex-col justify-between items-center`} style={{height:'calc(100vh - 160px)'}} >
+            <div className='w-full h-full bg-gray-300 flex flex-row justify-start gap-x-2' style={{marginLeft:"220px"}} >
                <div className='w-1/2 bg-white  flex flex-col gap-y-8' >
                <div className="w-full flex items-center gap-x-4 py-4 bg-gray-100">
   {/* Text Section */}
@@ -70,13 +83,26 @@ const  HomePage = () => {
 </div>
                </div>
                <div className='w-1/2 bg-white flex justify-start items-center' >
-                  <div className='w-2/3 bg-gray-400 bg-opacity-20 h-72 flex items-center justify-center rounded-full' >
-                        <img src="/ziizii2.jpg" className='w-72 h-72 object-cover rounded-full' alt="" />
+                  <div className='w-2/3 bg-gray-400 animate-slideDown bg-opacity-20 h-72 flex items-center justify-center rounded-full' >
+                        <img src="/ziizii2.jpg" onLoad={firstImageLoad} className='w-72 h-72 object-cover rounded-full' alt="" />
                   </div>
                </div>
             </div>
-            <div className='w-full h-1/2 bg-red-400'>
+            <div className='w-full bg-red-300 flex flex-row justify-start gap-x-2' style={{marginLeft:"220px"}} >
+               <div className='w-1/2 bg-gray-700 flex justify-center' >
+                   <div className='w-72 animate-slideRight h-full flex justify-center  bg-gray-200 rounded-full' >
+                     <img src="/ziizi.jpg" onLoad={secondImageLoad} className='rounded-full w-64 h-full' alt="" />
+                   </div>
+               </div>
+               <div className='bg-white pr-32 overflow-hidden w-1/2 pl- flex justify-start items-center ' >
+               <div className=' h-full flex items-center overflow-hidden px-6' >
+               <span className="text-lg pl-6 animate-slideLeft text-center word-break overflow-x-hidden font-bold text-gray-800 tracking-wide">
+               Transform your life with [Ziizii Vlog]. Our blog offers tips, advice, and inspiration to help you unlock your potential and achieve your goals. Explore topics like productivity, mindfulness, and self-growth to create a better you!
+  </span>
 
+               </div>
+  
+               </div>
             </div>
             </div>
     );

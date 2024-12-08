@@ -156,6 +156,10 @@ module.exports={
               '50%': { width: '30%' },
               '100%': { width: '0%' },
             },
+            typing2: {
+              '0%': { width: '0%' },
+              '100%': { width: '100%' },
+            },
             blink: {
               '0%, 100%': { borderColor: 'transparent' },
               '50%': { borderColor: 'black' },
@@ -163,7 +167,8 @@ module.exports={
            
           },
           animation: {
-            typing: 'typing 3s steps(30, end) infinite',// typing effect
+            typing: 'typing 3s steps(30, end) infinite',
+            typing2:'typing2 12s steps(15,end) forwards',
             blink: 'blink 0.5s step-end infinite',
             fadeIn: 'fadeIn 1s ease-in-out ',
             fadeInSlow:"fadeIn 4s ease-in-out",
